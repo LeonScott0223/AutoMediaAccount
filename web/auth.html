@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录 / 注册 - 薯光卡密</title>
+  <meta name="description" content="账号登录与注册页面">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body data-page="auth">
+  <main class="auth-shell">
+    <div class="container">
+      <div class="auth-layout">
+        <aside class="auth-visual">
+          <img src="assets/images/auth-visual.svg" alt="登录注册占位图">
+          <div class="auth-visual-copy">
+            <span class="section-kicker">Account Access</span>
+            <h2>登录后查看个人中心、订单统计与最近支付记录</h2>
+            <p>注册采用用户名模式，无需手机验证码或邮箱验证码，适合前台演示与后续接口联调。</p>
+          </div>
+        </aside>
+
+        <section class="auth-panel">
+          <a class="brand auth-brand" href="index.html">
+            <span class="brand-mark">S</span>
+            <div>
+              <p class="brand-kicker mb-0">欢迎回来</p>
+              <h1 class="brand-title mb-0">薯光卡密</h1>
+            </div>
+          </a>
+
+          <div class="auth-switcher" id="authSwitcher">
+            <button class="auth-switch-btn active" type="button" data-mode="login">登录</button>
+            <button class="auth-switch-btn" type="button" data-mode="register">注册</button>
+          </div>
+
+          <div class="auth-copy">
+            <h3 id="authTitle">登录账号</h3>
+            <p id="authDescription">输入用户名和密码即可进入个人中心，未登录访问“我的”页面时会自动跳转到这里。</p>
+          </div>
+
+          <form id="authForm" class="auth-form" novalidate>
+            <div class="mb-3">
+              <label class="form-label" for="authUsername">用户名</label>
+              <input class="form-control" id="authUsername" name="username" type="text" placeholder="请输入用户名" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="authPassword">密码</label>
+              <input class="form-control" id="authPassword" name="password" type="password" placeholder="请输入密码" required>
+            </div>
+
+            <div class="mb-3 hidden" id="confirmPasswordGroup">
+              <label class="form-label" for="authConfirmPassword">确认密码</label>
+              <input class="form-control" id="authConfirmPassword" name="confirmPassword" type="password" placeholder="请再次输入密码">
+            </div>
+
+            <button class="btn btn-dark btn-pill w-100 auth-submit-btn" id="authSubmitBtn" type="submit">立即登录</button>
+          </form>
+
+          <div class="auth-footnote">
+            <p>演示说明：可先注册新账号，也可直接使用系统内置演示账号体验登录流程。</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.13/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

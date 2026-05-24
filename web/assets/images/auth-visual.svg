@@ -1,0 +1,23 @@
+<svg width="900" height="980" viewBox="0 0 900 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="980" rx="48" fill="url(#paint0_linear_91_2)"/>
+  <rect x="80" y="88" width="740" height="804" rx="40" fill="white" fill-opacity="0.88"/>
+  <circle cx="708" cy="192" r="112" fill="#111111" fill-opacity="0.08"/>
+  <circle cx="200" cy="772" r="142" fill="#111111" fill-opacity="0.06"/>
+  <rect x="136" y="156" width="628" height="332" rx="28" fill="#F4F1EB"/>
+  <rect x="176" y="220" width="200" height="56" rx="20" fill="#111111"/>
+  <rect x="176" y="312" width="460" height="24" rx="12" fill="#8A877F"/>
+  <rect x="176" y="360" width="420" height="24" rx="12" fill="#8A877F"/>
+  <rect x="136" y="546" width="628" height="110" rx="28" fill="#F7F6F3"/>
+  <rect x="176" y="584" width="220" height="22" rx="11" fill="#111111"/>
+  <rect x="176" y="692" width="260" height="72" rx="28" fill="#111111"/>
+  <rect x="464" y="692" width="220" height="72" rx="28" fill="#F3F1EC" stroke="#D9D5CC"/>
+  <text x="182" y="744" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="700">登录 / 注册</text>
+  <text x="176" y="850" fill="#111111" font-family="Arial, sans-serif" font-size="54" font-weight="700">用户名模式快速接入</text>
+  <defs>
+    <linearGradient id="paint0_linear_91_2" x1="72" y1="54" x2="838" y2="924" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7EE"/>
+      <stop offset="0.45" stop-color="#FAF8F4"/>
+      <stop offset="1" stop-color="#F1EEE7"/>
+    </linearGradient>
+  </defs>
+</svg>

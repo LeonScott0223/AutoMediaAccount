@@ -1,0 +1,20 @@
+<svg width="720" height="820" viewBox="0 0 720 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="820" rx="48" fill="url(#paint0_linear_3_1)"/>
+  <circle cx="598" cy="172" r="132" fill="white" fill-opacity="0.28"/>
+  <rect x="76" y="112" width="568" height="600" rx="42" fill="white" fill-opacity="0.72"/>
+  <rect x="126" y="174" width="194" height="252" rx="30" fill="#F7D1E3"/>
+  <rect x="352" y="176" width="240" height="40" rx="20" fill="#101010"/>
+  <rect x="352" y="236" width="198" height="22" rx="11" fill="#7A6673"/>
+  <rect x="352" y="292" width="214" height="22" rx="11" fill="#7A6673"/>
+  <rect x="126" y="470" width="468" height="30" rx="15" fill="#101010"/>
+  <rect x="126" y="528" width="440" height="20" rx="10" fill="#7A6673"/>
+  <rect x="126" y="572" width="332" height="20" rx="10" fill="#7A6673"/>
+  <text x="126" y="660" fill="#101010" font-family="Arial, sans-serif" font-size="42" font-weight="700">美妆种草实名号</text>
+  <defs>
+    <linearGradient id="paint0_linear_3_1" x1="96" y1="32" x2="628" y2="786" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE5F0"/>
+      <stop offset="0.48" stop-color="#FFF5E9"/>
+      <stop offset="1" stop-color="#FAF9FF"/>
+    </linearGradient>
+  </defs>
+</svg>

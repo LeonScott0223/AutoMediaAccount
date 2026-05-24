@@ -1,0 +1,21 @@
+<svg width="720" height="820" viewBox="0 0 720 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="820" rx="48" fill="url(#paint0_linear_1_1)"/>
+  <circle cx="570" cy="150" r="120" fill="white" fill-opacity="0.42"/>
+  <circle cx="165" cy="640" r="180" fill="white" fill-opacity="0.3"/>
+  <rect x="76" y="110" width="568" height="600" rx="42" fill="white" fill-opacity="0.7"/>
+  <rect x="130" y="176" width="190" height="250" rx="28" fill="#FFD6DD"/>
+  <rect x="354" y="176" width="236" height="38" rx="19" fill="#121212"/>
+  <rect x="354" y="238" width="180" height="24" rx="12" fill="#575757"/>
+  <rect x="354" y="294" width="214" height="24" rx="12" fill="#575757"/>
+  <rect x="130" y="470" width="460" height="28" rx="14" fill="#121212"/>
+  <rect x="130" y="524" width="414" height="20" rx="10" fill="#666666"/>
+  <rect x="130" y="568" width="360" height="20" rx="10" fill="#666666"/>
+  <text x="132" y="660" fill="#121212" font-family="Arial, sans-serif" font-size="46" font-weight="700">女粉穿搭种草号</text>
+  <defs>
+    <linearGradient id="paint0_linear_1_1" x1="76" y1="39" x2="642" y2="785" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE7EB"/>
+      <stop offset="0.48" stop-color="#FFF7E8"/>
+      <stop offset="1" stop-color="#FAF8FF"/>
+    </linearGradient>
+  </defs>
+</svg>
