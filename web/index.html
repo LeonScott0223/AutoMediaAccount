@@ -46,6 +46,16 @@
               <div class="hero-actions">
                 <a class="btn btn-dark btn-pill" href="#product-section">立即选购</a>
                 <a class="btn btn-light btn-pill btn-outline-soft" href="orders.html">查看订单</a>
+                <button
+                  class="btn btn-light btn-pill btn-outline-soft notice-open-btn"
+                  id="openSiteNoticeBtn"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#siteNoticeModal"
+                >
+                  <i class="bi bi-megaphone"></i>
+                  网站公告
+                </button>
               </div>
             </div>
             <div class="hero-metrics">
@@ -63,16 +73,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="container mt-4 mt-lg-5">
-        <div class="notice-strip glass-panel" data-aos="fade-up" data-aos-delay="50">
-          <div class="section-label">
-            <i class="bi bi-megaphone"></i>
-            网站公告
-          </div>
-          <div class="notice-content" id="noticeList"></div>
         </div>
       </section>
 
@@ -185,6 +185,35 @@
             <button class="btn btn-dark btn-pill" type="submit">应用筛选</button>
           </div>
         </form>
+      </div>
+    </div>
+
+    <div class="modal fade site-notice-modal" id="siteNoticeModal" tabindex="-1" aria-labelledby="siteNoticeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header site-notice-header">
+            <div class="site-notice-title" id="siteNoticeModalLabel">
+              <span class="site-notice-icon">
+                <i class="bi bi-megaphone"></i>
+              </span>
+              <div>
+                <span>网站公告</span>
+                <small>请在下单前阅读最新交易与发货说明</small>
+              </div>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="notice-modal-list" id="noticeModalList"></div>
+          </div>
+          <div class="modal-footer site-notice-footer">
+            <label class="notice-remind-check" for="noticeDoNotShowToday">
+              <input class="form-check-input" id="noticeDoNotShowToday" type="checkbox">
+              <span>今日不再自动提醒</span>
+            </label>
+            <button type="button" class="btn btn-dark btn-pill" data-bs-dismiss="modal">我知道了</button>
+          </div>
+        </div>
       </div>
     </div>
 

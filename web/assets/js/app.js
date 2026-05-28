@@ -5,6 +5,7 @@
   var USER_KEY = "auto-account-user";
   var USERS_KEY = "auto-account-users";
   var PENDING_PAYMENT_KEY = "auto-account-pending-payment";
+  var NOTICE_HIDE_DATE_KEY = "auto-account-notice-hide-date";
   var page = $("body").data("page");
   var state = {
     category: "全部",
@@ -157,21 +158,107 @@
     $("[data-auth-slot]").html(html);
   }
 
-  function renderNoticeList() {
+  function getTodayKey() {
+    return dayjs().format("YYYY-MM-DD");
+  }
+
+  function buildSiteNoticeModalMarkup() {
+    return '' +
+      '<div class="modal fade site-notice-modal" id="siteNoticeModal" tabindex="-1" aria-labelledby="siteNoticeModalLabel" aria-hidden="true">' +
+        '<div class="modal-dialog modal-dialog-centered modal-lg">' +
+          '<div class="modal-content">' +
+            '<div class="modal-header site-notice-header">' +
+              '<div class="site-notice-title" id="siteNoticeModalLabel">' +
+                '<span class="site-notice-icon"><i class="bi bi-megaphone"></i></span>' +
+                '<div>' +
+                  '<span>网站公告</span>' +
+                  '<small>请在下单前阅读最新交易与发货说明</small>' +
+                '</div>' +
+              '</div>' +
+              '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>' +
+            '</div>' +
+            '<div class="modal-body">' +
+              '<div class="notice-modal-list" id="noticeModalList"></div>' +
+            '</div>' +
+            '<div class="modal-footer site-notice-footer">' +
+              '<label class="notice-remind-check" for="noticeDoNotShowToday">' +
+                '<input class="form-check-input" id="noticeDoNotShowToday" type="checkbox">' +
+                '<span>今日不再自动提醒</span>' +
+              '</label>' +
+              '<button type="button" class="btn btn-dark btn-pill" data-bs-dismiss="modal">我知道了</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function ensureSiteNoticeModal() {
+    if ($("#siteNoticeModal").length) {
+      return;
+    }
+
+    $(".app-shell").append(buildSiteNoticeModalMarkup());
+  }
+
+  function renderNoticeModalList() {
     var notices = window.AutoAccountData.notices || [];
     var html = notices.map(function (item) {
       return (
-        '<article class="notice-item">' +
+        '<article class="notice-modal-item">' +
           "<div>" +
             "<strong>" + item.title + "</strong>" +
             "<p>" + item.content + "</p>" +
           "</div>" +
-          "<span>" + item.time + "</span>" +
+          '<span class="notice-modal-time">' + item.time + "</span>" +
         "</article>"
       );
     }).join("");
 
-    $("#noticeList").html(html);
+    $("#noticeModalList").html(html);
+  }
+
+  function setNoticeHiddenForToday(hidden) {
+    if (hidden) {
+      localStorage.setItem(NOTICE_HIDE_DATE_KEY, getTodayKey());
+      return;
+    }
+
+    localStorage.removeItem(NOTICE_HIDE_DATE_KEY);
+  }
+
+  function shouldAutoShowSiteNotice() {
+    return localStorage.getItem(NOTICE_HIDE_DATE_KEY) !== getTodayKey();
+  }
+
+  function initSiteNoticeModal() {
+    ensureSiteNoticeModal();
+
+    var $modal = $("#siteNoticeModal");
+    var modalElement = $modal.get(0);
+    if (!modalElement || !window.bootstrap) {
+      return;
+    }
+
+    renderNoticeModalList();
+
+    $("#noticeDoNotShowToday")
+      .prop("checked", !shouldAutoShowSiteNotice())
+      .off("change.siteNotice")
+      .on("change.siteNotice", function () {
+        setNoticeHiddenForToday(this.checked);
+      });
+
+    $modal
+      .off("shown.bs.modal.siteNotice")
+      .on("shown.bs.modal.siteNotice", function () {
+        $("#noticeDoNotShowToday").prop("checked", !shouldAutoShowSiteNotice());
+      });
+
+    if (shouldAutoShowSiteNotice()) {
+      window.setTimeout(function () {
+        bootstrap.Modal.getOrCreateInstance(modalElement).show();
+      }, 420);
+    }
   }
 
   function renderCategoryFilters() {
@@ -404,7 +491,6 @@
   }
 
   function renderHomePage() {
-    renderNoticeList();
     renderCategoryFilters();
     syncDrawerForm();
     renderProducts();
@@ -1058,6 +1144,7 @@
   function boot() {
     renderHeaderAuth();
     initAOS();
+    initSiteNoticeModal();
 
     if (page === "home") {
       renderHomePage();
