@@ -1,4 +1,4 @@
-# AutoMeidaAccount
+# AutoMediaAccount
 
 Automatic card delivery for self-media account transactions, stable 24-hour account distribution.
 
